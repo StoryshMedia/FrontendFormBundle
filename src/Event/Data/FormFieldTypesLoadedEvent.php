@@ -9,12 +9,12 @@ class FormFieldTypesLoadedEvent extends Event
 {
     public const NAME = 'data.form.field.types.loaded';
 
-    protected $data;
+    protected array $data;
     protected array $config;
     protected Context $context;
  
     public function __construct(
-        $data,
+        array $data = [],
         Context $context
     ) {
         $this->data = $data;

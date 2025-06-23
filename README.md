@@ -1,1 +1,1 @@
-<h1 align="center">Nodaro Frontend Bundle</h1>
+<h1 align="center">Nodaro Frontend Formular Bundle</h1>

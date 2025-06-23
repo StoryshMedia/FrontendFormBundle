@@ -9,29 +9,11 @@ use Smug\Core\Service\Base\Components\Provider\DataProvider\TimeProvider;
 use Smug\Core\Service\Base\Service\AddBaseService;
 use Smug\FrontendBundle\Controller\Frontend\Api\Base\FeBaseController;
 use Smug\FrontendFormBundle\Entity\Result\Result;
-use Smug\FrontendFormBundle\Event\Data\FormFieldTypesLoadedEvent;
-use Smug\FrontendFormBundle\Event\FrontendFormEvents;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DataController extends FeBaseController
 {
-    #[Route('/be/api/custom/form/field/types', name: 'be_api_form_field_type_list', methods:"GET")]
-    public function getFieldTypesAction(
-    ): JsonResponse {
-        $data = DataHandler::getJsonDecode(
-            DataHandler::getFile(__DIR__ . 'config/administration/fieldTypes.json')
-        );
-
-        $data = $this->dispatchData(
-            $data,
-            $this->context,
-            FormFieldTypesLoadedEvent::class, '', FrontendFormEvents::FRONTEND_FORM_FIELD_TYPES_LOADED
-        );
-
-        return $this->prepareReturn($data);
-    }
-
     #[Route(
         '/fe/api/custom/dynamic/form',
         name: 'fe_dynamic_form_add',
