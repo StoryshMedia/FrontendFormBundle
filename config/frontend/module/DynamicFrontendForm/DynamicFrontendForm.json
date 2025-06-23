@@ -1,0 +1,64 @@
+{
+    "title": "Dynamisches Formular ",
+    "identifier": "SmugDynamicFrontendForm",
+    "type": "plugin",
+    "category": "Forms",
+    "description": {
+        "de": "Formular mit konfigurierbaren Feldern",
+        "en": "Form with configurable fields"
+    },
+    "settings": {
+        "plugin": {
+            "fields": [
+                {
+                    "placeholder": "API_SELECTION",
+                    "identifier": "apiEndpoint",
+                    "default": "",
+                    "type": "ApiSelection"
+                },
+                {
+                    "identifier": "form",
+                    "placeholder": "FORM",
+                    "default": "",
+                    "type": "FormSelect",
+                    "classes": []
+                },
+                {
+                    "identifier": "buttonText",
+                    "placeholder": "BUTTON_TEXT",
+                    "default": "",
+                    "type": "Text",
+                    "classes": []
+                },
+                {
+                    "identifier": "successText",
+                    "placeholder": "SUCCESS_FORM_TEXT",
+                    "default": "",
+                    "type": "Text",
+                    "classes": []
+                }
+            ]
+        },
+        "template": {
+            "frontend": {
+                "templatePath": "@SmugFrontendForm/frontend/modules/DynamicFrontendForm/index.html.twig"
+            }
+        },
+        "scripts": [
+            "dynamicForm"
+        ],
+        "fields": [
+            {
+                "identifier": "headline",
+                "placeholder": "HEADLINE",
+                "default": "Welcome to Our Awesome Website",
+                "type": "Text",
+                "classes": ["text-5xl", "font-bold", "leading-tight", "mb-4"],
+                "config": {
+                    "valueType": "string",
+                    "contentEditable": true
+                }
+            }
+        ]
+    }
+}

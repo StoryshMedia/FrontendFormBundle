@@ -1,0 +1,132 @@
+[
+    {
+        "title": "TEXT",
+        "value": {
+            "value": "text",
+            "identifier": "text",
+            "config": {
+            }
+        }
+    },
+    {
+        "title": "E_MAIL",
+        "value": {
+            "identifier": "email",
+            "value": "email",
+            "config": {
+                "pattern": "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
+            }
+        }
+    },
+    {
+        "title": "NUMBER",
+        "value": {
+            "value": "numeric",
+            "identifier": "numeric",
+            "config": {
+                "min": "",
+                "max": ""
+            }
+        }
+    },
+    {
+        "title": "PASSWORD",
+        "value": {
+            "value": "password",
+            "identifier": "password",
+            "config": {
+            }
+        }
+    },
+    {
+        "title": "DATE",
+        "value": {
+            "identifier": "date",
+            "value": "date",
+            "config": {
+                "min": "",
+                "max": ""
+            }
+        }
+    },
+    {
+        "title": "TEXTAREA",
+        "value": {
+            "value": "textarea",
+            "identifier": "textarea",
+            "config": {
+                "rows": "",
+                "cols": ""
+            }
+        }
+    },
+    {
+        "title": "CHECKBOX",
+        "value": {
+            "value": "checkbox",
+            "identifier": "checkbox",
+            "config": {
+                "values": []
+            }
+        }
+    },
+    {
+        "title": "RADIO_BUTTON",
+        "value": {
+            "value": "radio",
+            "identifier": "radio",
+            "config": {
+                "values": []
+            }
+        }
+    },
+    {
+        "title": "SELECTBOX",
+        "value": {
+            "value": "select",
+            "identifier": "select",
+            "config": {
+                "values": []
+            }
+        }
+    },
+    {
+        "title": "MULTI_SELECT",
+        "value": {
+            "identifier": "multiSelect",
+            "value": "multiSelect",
+            "config": {
+                "values": []
+            }
+        }
+    },
+    {
+        "title": "FILE_UPLOAD",
+        "value": {
+            "value": "file",
+            "identifier": "file",
+            "config": {
+                "accept": ""
+            }
+        }
+    },
+    {
+        "title": "TELEPHONE",
+        "value": {
+            "identifier": "telephone",
+            "value": "telephone",
+            "config": {
+                "pattern": "[0-9]"
+            }
+        }
+    },
+    {
+        "title": "ROW",
+        "value": {
+            "identifier": "row",
+            "value": "row",
+            "config": {
+            }
+        }
+    }
+]

@@ -1,0 +1,13 @@
+{
+    "forms": {
+        "label": "FORMS",
+        "key": "forms",
+        "parent": "websites",
+        "icon": "",
+        "path": "smug/frontend_form/form/list",
+        "position": 3,
+        "type": 2,
+        "children": []
+    }
+}
+  

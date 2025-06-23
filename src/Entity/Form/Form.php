@@ -1,0 +1,40 @@
+<?php
+
+namespace Smug\FrontendFormBundle\Entity\Form;
+
+use Smug\Core\Entity\Base\BaseModel;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\Table;
+use Symfony\Component\Serializer\Attribute\Groups;
+use Doctrine\Common\Collections\ArrayCollection;
+use Smug\Core\Entity\Base\Attribute\BackendField;
+use Smug\FrontendFormBundle\Entity\FormField\FormField;
+
+#[Entity]
+#[Table('frontend_form')]
+class Form extends BaseModel
+{
+    #[Column(type: 'string')]
+    #[BackendField(config: [
+        'type' => 'Text',
+        'placeholder' => 'TITLE'
+    ])]
+    protected string $title;
+
+    #[OneToMany(targetEntity: FormField::class, mappedBy: 'form')]
+    #[Groups(['list', 'nested'])]
+    #[BackendField(config: [
+        'type' => 'FormFields',
+        'placeholder' => 'FIELDS',
+        'config' => [
+        ]
+    ])]
+    protected $fields;
+
+    public function __construct()
+    {
+        $this->fields = new ArrayCollection();
+    }
+}

@@ -1,0 +1,41 @@
+[
+    {
+        "name": "Text"
+    },
+    {
+        "name": "Email"
+    },
+    {
+        "name": "Numeric"
+    },
+    {
+        "name": "Date"
+    },
+    {
+        "name": "Password"
+    },
+    {
+        "name": "Textarea"
+    },
+    {
+        "name": "Hidden"
+    },
+    {
+        "name": "Telephone"
+    },
+    {
+        "name": "Select"
+    },
+    {
+        "name": "MultiSelect"
+    },
+    {
+        "name": "Checkbox"
+    },
+    {
+        "name": "Radio"
+    },
+    {
+        "name": "File"
+    }
+]
