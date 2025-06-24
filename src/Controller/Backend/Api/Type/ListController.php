@@ -15,7 +15,7 @@ class ListController extends FeBaseController
     public function getFieldTypesAction(
     ): JsonResponse {
         $data = DataHandler::getJsonDecode(
-            DataHandler::getFile(__DIR__ . '/../../../config/administration/fieldTypes.json')
+            DataHandler::getFile(__DIR__ . '/../../../../../config/administration/fieldTypes.json')
         );
 
         $data = $this->dispatchData(

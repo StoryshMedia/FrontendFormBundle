@@ -67,6 +67,18 @@
           :field-placeholder="'VALIDATION_TYPE'"
           @updateValue="setFieldValue($event, 'validationType', fieldIndex)"
         />
+        <p
+          class="mt-3 mb-1 pl-2 text-sm font-bold"
+        >
+          {{ $t('IDENTIFIER') }}
+        </p>
+        <field
+          :edit-allowed="true"
+          :field-string="'Text'"
+          :item-value="field.identifier"
+          :field-placeholder="'IDENTIFIER'"
+          @updateValue="setFieldValue($event, 'identifier', fieldIndex)"
+        />
 
         <field-config
           :field="{...field}"
