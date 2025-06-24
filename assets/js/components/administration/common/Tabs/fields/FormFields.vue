@@ -33,6 +33,7 @@
             @updateField="setFieldValue($event)"
             @updateConfig="setFieldConfig($event)"
             @deleteField="deleteField($event)"
+            @updateChildField="updateChildField($event)"
             @deleteChildField="deleteChildField($event)"
             @addRowField="addRowField($event)"
           />
@@ -101,6 +102,10 @@ export default {
     this.getData();
   },
   methods: {
+    updateChildField(event) {
+      this.fields[event.index].children[event.childIndex][event.identifier] = event.value;
+      this.$emit('updateValue', this.fields);
+    },
     setFieldValue(event) {
       this.fields[event.index][event.identifier] = event.value;
       this.$emit('updateValue', this.fields);
@@ -149,7 +154,7 @@ export default {
           identifier: '',
           parentId: '',
           position: (lastElement === null) ? 0 : lastElement.position + 1,
-          label: 'NEW_FIELD',
+          label: this.$t('NEW_FIELD'),
           form: {
             id: this.baseId
           }
@@ -169,7 +174,7 @@ export default {
           identifier: '',
           parentId: event.item.id,
           position: event.item.children.length,
-          label: 'NEW_FIELD',
+          label: this.$t('NEW_FIELD'),
           form: {
             id: this.baseId
           }

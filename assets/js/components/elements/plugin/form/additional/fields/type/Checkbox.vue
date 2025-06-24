@@ -1,27 +1,30 @@
 <template>
-  <div class="grid grid-cols-4">
-    <div
-      v-for="(value, valueIndex) of fieldConfig.values"
-      :key="valueIndex"
-      class="flex items-center cursor-pointer"
-      @click="setContent(value.value)"
-    >
-      <input
-        :id="'check-value-' + value.value"
-        class="border-gray cursor-pointer"
-        type="checkbox"
-        :checked="isChecked(value.value)"
-        :model="value.value"
+  <div class="block">
+    <span class="block text-sm font-medium text-dark">{{ $t(fieldPlaceholder) }}</span>
+    <div class="grid grid-cols-4 mt-3">
+      <div
+        v-for="(value, valueIndex) of fieldConfig.values"
+        :key="valueIndex"
+        class="flex items-center cursor-pointer"
+        @click="setContent(value.value)"
       >
-      <label
-        class="checkbox-label cursor-pointer"
-        :class="{ active: isChecked(value.value) }"
-        :for="'check-value-' + value.value"
-      >
-        <span
-          class="m-3 font-medium"
-        >{{ $t(value.value) }}</span>
-      </label>
+        <input
+          :id="'check-value-' + value.value"
+          class="border-gray cursor-pointer"
+          type="checkbox"
+          :checked="isChecked(value.value)"
+          :model="value.value"
+        >
+        <label
+          class="checkbox-label cursor-pointer"
+          :class="{ active: isChecked(value.value) }"
+          :for="'check-value-' + value.value"
+        >
+          <span
+            class="m-3 font-medium"
+          >{{ $t(value.value) }}</span>
+        </label>
+      </div>
     </div>
   </div>
 </template>

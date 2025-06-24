@@ -1,13 +1,17 @@
 <template>
-  <textarea
-    type="text"
-    :placeholder="$t(fieldPlaceholder)"
-    class="w-full input rounded-3xl shadow-xl border-gray"
-    :class="fieldConfig.classes ?? ''"
-    :rows="fieldConfig.rows ?? 5"
-    :value="getValue()"
-    @change="setContent($event)"
-  />
+  <label class="block">
+    <span class="block text-sm font-medium text-dark">{{ $t(fieldPlaceholder) }}</span>
+    <textarea
+      :id="fieldIdentifier"
+      type="text"
+      :placeholder="$t(fieldPlaceholder)"
+      class="border-slate-200 mt-3 w-full placeholder-gray-500 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"
+      :class="fieldConfig.classes ?? ''"
+      :rows="fieldConfig.rows ?? 5"
+      :value="getValue()"
+      @change="setContent($event)"
+    />
+  </label>
 </template>
   
 <script>

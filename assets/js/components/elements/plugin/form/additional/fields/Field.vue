@@ -4,6 +4,7 @@
       :is="componentLoader"
       :field-value="itemValue"
       :field-placeholder="fieldPlaceholder"
+      :field-identifier="fieldIdentifier"
       :field-config="fieldConfig"
       :error-text="errorText"
       :object-values="objectValues"
@@ -38,6 +39,11 @@ export default {
       required: false,
       default: ''
     },
+    fieldIdentifier:{
+      type: String,
+      required: false,
+      default: ''
+    },
     fieldConfig:{
       type: Object,
       required: false,
@@ -62,7 +68,7 @@ export default {
 
       try {
         if (field) {
-          return defineAsyncComponent(() => import("../../../../../../../../../../" + field.path + ".vue"));
+          return defineAsyncComponent(() => import("@root/" + field.path + ".vue"));
         } else {
           return '';
         }

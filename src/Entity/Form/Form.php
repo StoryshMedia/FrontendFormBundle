@@ -11,6 +11,7 @@ use Symfony\Component\Serializer\Attribute\Groups;
 use Doctrine\Common\Collections\ArrayCollection;
 use Smug\Core\Entity\Base\Attribute\BackendField;
 use Smug\FrontendFormBundle\Entity\FormField\FormField;
+use Smug\FrontendFormBundle\Entity\Result\Result;
 
 #[Entity]
 #[Table('frontend_form')]
@@ -33,8 +34,20 @@ class Form extends BaseModel
     ])]
     protected $fields;
 
+
+    #[OneToMany(targetEntity: Result::class, mappedBy: 'form')]
+    #[Groups(['list'])]
+    #[BackendField(config: [
+        'type' => 'FormResults',
+        'placeholder' => 'RESULTS',
+        'config' => [
+        ]
+    ])]
+    protected $results;
+
     public function __construct()
     {
         $this->fields = new ArrayCollection();
+        $this->results = new ArrayCollection();
     }
 }

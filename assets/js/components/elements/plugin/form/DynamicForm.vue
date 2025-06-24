@@ -45,13 +45,11 @@
           v-if="field.type !== 'row'"
           class="my-5"
         >
-          <label class="block text-left mb-2">
-            {{ field.label }}
-          </label>
           <field
             :field-string="field.type"
             :field-config="field.fieldConfiguration"
             :field-placeholder="field.label"
+            :field-identifier="field.identifier"
             :item-value="getFieldValue(field.identifier)"
             @update-value="setValueChange($event, field.identifier)"
           />
@@ -69,13 +67,11 @@
             v-for="(child, childIndex) of field.children"
             :key="childIndex"
           >
-            <label class="block text-left mb-2">
-              {{ child.label }}
-            </label>
             <field
               :field-string="child.type"
               :field-config="child.fieldConfiguration"
               :field-placeholder="child.label"
+              :field-identifier="child.identifier"
               :item-value="getFieldValue(child.identifier)"
               @update-value="setValueChange($event, child.identifier)"
             />

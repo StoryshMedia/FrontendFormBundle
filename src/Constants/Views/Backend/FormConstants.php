@@ -38,8 +38,7 @@ class FormConstants implements BackendDataConstantsInterface
 			'model' => Form::class,
 			'url' => [
 				'save' => true
-			],
-			'processEvent' => 'domainSaved'
+			]
 		],
 		'tabs' => [
 			[
@@ -55,10 +54,22 @@ class FormConstants implements BackendDataConstantsInterface
 			[
 				'headline' => 'FIELDS',
 				'type' => 'standard',
+				'icon' => 'IconSettings',
 				'rows' => [
 					[
 						'class' => 'grid grid-cols-1',
 						'fields' => ["fields"]
+					]
+				]
+			],
+			[
+				'headline' => 'RESULTS',
+				'type' => 'standard',
+				'icon' => 'IconSettings',
+				'rows' => [
+					[
+						'class' => 'grid grid-cols-1',
+						'fields' => ["results"]
 					]
 				]
 			]
