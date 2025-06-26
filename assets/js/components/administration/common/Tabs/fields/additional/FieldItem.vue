@@ -17,18 +17,65 @@
     </div>
     <vue-collapsible :is-open="expanded === true">
       <div class="pt-1 pb-3 px-2 border-t border-gray">
-        <p
-          class="mt-3 mb-1 pl-2 text-sm font-bold"
-        >
-          {{ $t('REQUIRED') }}
-        </p>
-        <field
-          :edit-allowed="true"
-          :field-string="'Checkbox'"
-          :item-value="field.required"
-          :field-placeholder="'REQUIRED'"
-          @updateValue="setFieldValue($event, 'required', fieldIndex)"
-        />
+        <div class="grid grid-cols-2">
+          <div>
+            <p
+              class="mt-3 mb-1 pl-2 text-sm font-bold"
+            >
+              {{ $t('REQUIRED') }}
+            </p>
+            <field
+              :edit-allowed="true"
+              :field-string="'Checkbox'"
+              :item-value="field.required"
+              :field-placeholder="'REQUIRED'"
+              @updateValue="setFieldValue($event, 'required', fieldIndex)"
+            />
+          </div>
+          <div>
+            <p
+              class="mt-3 mb-1 pl-2 text-sm font-bold"
+            >
+              {{ $t('USE_AS_NAME') }}
+            </p>
+            <field
+              :edit-allowed="true"
+              :field-string="'Checkbox'"
+              :item-value="field.useAsName"
+              :field-placeholder="'USE_AS_NAME'"
+              @updateValue="setFieldValue($event, 'useAsName', fieldIndex)"
+            />
+          </div>
+          <div>
+            <p
+              class="mt-3 mb-1 pl-2 text-sm font-bold"
+            >
+              {{ $t('USE_AS_LAST_NAME') }}
+            </p>
+            <field
+              :edit-allowed="true"
+              :field-string="'Checkbox'"
+              :item-value="field.useAsLastName"
+              :field-placeholder="'USE_AS_LAST_NAME'"
+              @updateValue="setFieldValue($event, 'useAsLastName', fieldIndex)"
+            />
+          </div>
+          <div>
+            <p
+              class="mt-3 mb-1 pl-2 text-sm font-bold"
+            >
+              {{ $t('USE_AS_ADDRESS') }}
+            </p>
+            <field
+              :edit-allowed="true"
+              :field-string="'Checkbox'"
+              :item-value="field.useAsAddress"
+              :field-placeholder="'USE_AS_ADDRESS'"
+              @updateValue="setFieldValue($event, 'useAsAddress', fieldIndex)"
+            />
+          </div>
+        </div>
+
         <p
           class="mt-3 mb-1 pl-2 text-sm font-bold"
         >

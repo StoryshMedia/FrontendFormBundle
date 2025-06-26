@@ -4,5 +4,8 @@
     "TEXT": "Text",
     "RESULTS": "Resultate",
     "FIELD": "Feld",
+    "USE_AS_NAME": "Als Vorname nutzen (E-Mail)",
+    "USE_AS_LAST_NAME": "Als Nachname nutzen (E-Mail)",
+    "USE_AS_ADDRESS": "Als Empfänger nutzen (E-Mail)",
     "DATE": "Datum"
 }

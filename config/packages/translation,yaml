@@ -1,0 +1,5 @@
+framework:
+    default_locale: 'de'
+    translator:
+        paths:
+            - '%kernel.project_dir%/custom/Smug/FrontendFormBundle/translations'

@@ -4,5 +4,8 @@
     "RESULTS": "Results",
     "VALUE": "Value",
     "FIELD": "Field",
+    "USE_AS_NAME": "Use as name (E-Mail)",
+    "USE_AS_LAST_NAME": "Use as lastname (E-Mail)",
+    "USE_AS_ADDRESS": "Use as recipient (E-Mail)",
     "DATE": "Date"
 }

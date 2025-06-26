@@ -23,6 +23,42 @@ class FormField extends BaseModel
         'placeholder' => 'TYPE'
     ])]
     protected string $type;
+    
+    #[Column(type: 'boolean')]
+    #[DefaultValue(false)]
+    #[BackendField(config: [
+        'type' => 'Checkbox',
+        'placeholder' => 'NO_INDEX',
+        'config' => [
+            'trueLabel' => 'YES',
+            'falseLabel' => 'NO'
+        ]
+    ])]
+    protected string $useAsName;
+    
+    #[Column(type: 'boolean')]
+    #[DefaultValue(false)]
+    #[BackendField(config: [
+        'type' => 'Checkbox',
+        'placeholder' => 'NO_INDEX',
+        'config' => [
+            'trueLabel' => 'YES',
+            'falseLabel' => 'NO'
+        ]
+    ])]
+    protected string $useAsLastName;
+    
+    #[Column(type: 'boolean')]
+    #[DefaultValue(false)]
+    #[BackendField(config: [
+        'type' => 'Checkbox',
+        'placeholder' => 'NO_INDEX',
+        'config' => [
+            'trueLabel' => 'YES',
+            'falseLabel' => 'NO'
+        ]
+    ])]
+    protected string $useAsAddress;
 
     #[Column(type: 'string')]
     #[BackendField(config: [

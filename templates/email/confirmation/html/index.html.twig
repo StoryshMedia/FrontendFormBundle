@@ -1,0 +1,42 @@
+<div style="font-family:arial; font-size:12px; background: #ffffff; color: #111317;">
+    {% mjml %}
+        <mjml>
+            <mj-body>
+                {% block header %}
+                    {{ include('@SmugFrontend/email/base/html/header.html.twig') }}
+                {% endblock %}
+
+                <mj-section>
+                    <mj-column>
+                        <mj-text font-size="13px" line-height="16px" font-family="helvetica">
+                            {{ 'EMAIL_SALUTATION' | trans }} {{ data.salutation }},
+                        </mj-text>
+                    </mj-column>
+                </mj-section>
+
+                <mj-section>
+                    <mj-column>
+                        <mj-text font-size="13px" line-height="16px" font-family="helvetica">
+                            {{ 'INQUIRY_INTRODUCTION_TEXT' | trans }}
+                        </mj-text>
+                    </mj-column>
+                </mj-section>
+
+                <mj-section>
+                    <mj-column>
+                        <mj-table>
+                            {% for key,value in data %}
+                                {% if key != 'salutation' %}
+                                    <tr>
+                                        <td style="padding: 0 15px 0 0; width: 40%;">{{ key }}</td>
+                                        <td style="padding: 0 15px; width: 60%;">{{ value }}</td>
+                                    </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </mj-table>
+                    </mj-column>
+                </mj-section>
+            </mj-body>
+        </mjml>
+    {% endmjml %}
+</div>

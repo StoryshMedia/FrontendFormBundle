@@ -9,6 +9,7 @@ use Smug\Core\Service\Base\Components\Provider\DataProvider\TimeProvider;
 use Smug\Core\Service\Base\Service\AddBaseService;
 use Smug\FrontendBundle\Controller\Frontend\Api\Base\FeBaseController;
 use Smug\FrontendFormBundle\Entity\Result\Result;
+use Smug\FrontendFormBundle\Service\Factory\EmailDataFactory;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -46,7 +47,9 @@ class DataController extends FeBaseController
         $add = $service->add($this->context);
 
         if ($add['success'] === true) {
-           
+            $this->sendHtmlMail(
+                EmailDataFactory::getEmailData($this->context, $add['data']->__get('form'))
+            );
         }
 
         return $this->prepareReturn($add);
