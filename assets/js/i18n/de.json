@@ -4,5 +4,11 @@
     "TEXT": "Text",
     "RESULTS": "Resultate",
     "FIELD": "Feld",
+    "USE_AS_NAME": "Als Vorname nutzen (E-Mail)",
+    "USE_AS_LAST_NAME": "Als Nachname nutzen (E-Mail)",
+    "USE_AS_ADDRESS": "Als Empfänger nutzen (E-Mail)",
+    "SUBJECT_FOR_CONFIRMATION": "Betreff der Bestätigungsmail",
+    "SENDER_NAME": "Absendername der Bestätigungsmail",
+    "SENDER_EMAIL": "Absendeadresse der Bestätigungsmail",
     "DATE": "Datum"
 }

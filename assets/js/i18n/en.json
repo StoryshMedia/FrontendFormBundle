@@ -4,5 +4,11 @@
     "RESULTS": "Results",
     "VALUE": "Value",
     "FIELD": "Field",
+    "USE_AS_NAME": "Use as name (E-Mail)",
+    "USE_AS_LAST_NAME": "Use as lastname (E-Mail)",
+    "USE_AS_ADDRESS": "Use as recipient (E-Mail)",
+    "SUBJECT_FOR_CONFIRMATION": "Subject of the confirmation E-Mail",
+    "SENDER_NAME": "Sender name of the confirmation E-Mail",
+    "SENDER_EMAIL": "Sender address of the confirmation E-Mail",
     "DATE": "Date"
 }

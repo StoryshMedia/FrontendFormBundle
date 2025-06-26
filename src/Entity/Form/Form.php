@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping\Table;
 use Symfony\Component\Serializer\Attribute\Groups;
 use Doctrine\Common\Collections\ArrayCollection;
 use Smug\Core\Entity\Base\Attribute\BackendField;
+use Smug\Core\Entity\Base\Attribute\DefaultValue;
 use Smug\FrontendFormBundle\Entity\FormField\FormField;
 use Smug\FrontendFormBundle\Entity\Result\Result;
 
@@ -23,6 +24,38 @@ class Form extends BaseModel
         'placeholder' => 'TITLE'
     ])]
     protected string $title;
+
+    #[Column(type: 'string')]
+    #[BackendField(config: [
+        'type' => 'Email',
+        'placeholder' => 'SENDER_EMAIL'
+    ])]
+    protected string $senderEmail;
+
+    #[Column(type: 'string')]
+    #[BackendField(config: [
+        'type' => 'Text',
+        'placeholder' => 'SENDER_NAME'
+    ])]
+    protected string $senderName;
+
+    #[Column(type: 'string')]
+    #[BackendField(config: [
+        'type' => 'Text',
+        'placeholder' => 'SUBJECT_FOR_CONFIRMATION'
+    ])]
+    protected string $subject;
+
+    #[Column(type: 'string')]
+    #[DefaultValue('@SmugFrontendForm/email/confirmation/html/index.html.twig')]
+    #[BackendField(config: [
+        'type' => 'Selectbox',
+        'placeholder' => 'TEMPLATE',
+        'config' => [
+            'getCall' => '/be/api/custom/email/template/list'
+        ]
+    ])]
+    protected string $emailTemplate;
 
     #[OneToMany(targetEntity: FormField::class, mappedBy: 'form')]
     #[Groups(['list', 'nested'])]

@@ -35,6 +35,9 @@ class FormUpdateDataSubscriber implements EventSubscriberInterface
                 $field->__set('validationType', $fieldArray['validationType']);
                 $field->__set('fieldConfiguration', DataHandler::getJsonEncode($fieldArray['fieldConfiguration']));
                 $field->__set('required', $fieldArray['required']);
+                $field->__set('useAsName', $fieldArray['useAsName']);
+                $field->__set('useAsLastName', $fieldArray['useAsLastName']);
+                $field->__set('useAsAddress', $fieldArray['useAsAddress']);
 
                 $event->getContext()->getEntityManager()->persist($field);
                 $event->getContext()->getEntityManager()->flush();
@@ -50,6 +53,9 @@ class FormUpdateDataSubscriber implements EventSubscriberInterface
                         $childField->__set('fieldConfiguration', DataHandler::getJsonEncode($child['fieldConfiguration']));
                         $childField->__set('validationType', $child['validationType']);
                         $childField->__set('required', $child['required']);
+                        $childField->__set('useAsName', $child['useAsName']);
+                        $childField->__set('useAsLastName', $child['useAsLastName']);
+                        $childField->__set('useAsAddress', $child['useAsAddress']);
 
                         $event->getContext()->getEntityManager()->persist($childField);
                         $event->getContext()->getEntityManager()->flush();

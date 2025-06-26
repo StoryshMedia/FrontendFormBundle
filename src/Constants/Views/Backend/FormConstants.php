@@ -47,7 +47,15 @@ class FormConstants implements BackendDataConstantsInterface
 				'rows' => [
 					[
 						'class' => 'grid grid-cols-1 md:grid-cols-2 gap-5 my-5',
-						'fields' => ["title"]
+						'fields' => ["title", "emailTemplate"]
+					],
+					[
+						'class' => 'grid grid-cols-1 md:grid-cols-2 gap-5 my-5',
+						'fields' => ["senderName", "senderEmail"]
+					],
+					[
+						'class' => 'grid grid-cols-1 gap-5 my-5',
+						'fields' => ["subject"]
 					]
 				]
 			],
