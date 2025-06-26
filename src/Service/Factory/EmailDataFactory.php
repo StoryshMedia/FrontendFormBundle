@@ -6,7 +6,7 @@ use Exception;
 use Smug\Core\Context\Context;
 use Smug\Core\DataAbstractionLayer\EntityGenerator;
 use Smug\Core\Service\Base\Components\Handler\DataHandler;
-use Smug\Core\Service\Email\EmailData;
+use Smug\Core\Service\System\Email\EmailData;
 use Smug\FrontendFormBundle\Entity\Form\Form;
 use Smug\FrontendFormBundle\Entity\FormField\FormField;
 
