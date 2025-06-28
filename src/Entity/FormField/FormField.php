@@ -22,6 +22,7 @@ class FormField extends BaseModel
         'type' => 'Text',
         'placeholder' => 'TYPE'
     ])]
+    #[Groups(['public'])]
     protected string $type;
     
     #[Column(type: 'boolean')]
@@ -34,6 +35,7 @@ class FormField extends BaseModel
             'falseLabel' => 'NO'
         ]
     ])]
+    #[Groups(['public'])]
     protected string $useAsName;
     
     #[Column(type: 'boolean')]
@@ -46,6 +48,7 @@ class FormField extends BaseModel
             'falseLabel' => 'NO'
         ]
     ])]
+    #[Groups(['public'])]
     protected string $useAsLastName;
     
     #[Column(type: 'boolean')]
@@ -58,6 +61,7 @@ class FormField extends BaseModel
             'falseLabel' => 'NO'
         ]
     ])]
+    #[Groups(['public'])]
     protected string $useAsAddress;
 
     #[Column(type: 'string')]
@@ -65,6 +69,7 @@ class FormField extends BaseModel
         'type' => 'Text',
         'placeholder' => 'IDENTIFIER'
     ])]
+    #[Groups(['public'])]
     protected string $identifier;
 
     #[Column(type: 'string')]
@@ -72,11 +77,12 @@ class FormField extends BaseModel
         'type' => 'Text',
         'placeholder' => 'LABEL'
     ])]
+    #[Groups(['public'])]
     protected string $label;
 
     #[ManyToOne(targetEntity: Form::class, inversedBy: 'fields')]
     #[JoinColumn(name: 'form_id', referencedColumnName: 'id', onDelete: 'cascade', nullable: true)]
-    #[Groups(['minimal'])]
+    #[Groups(['public'])]
     protected Form $form;
 
     #[Column(type: 'integer')]
@@ -84,9 +90,11 @@ class FormField extends BaseModel
         'type' => 'Number',
         'placeholder' => 'POSITION'
     ])]
+    #[Groups(['public'])]
     protected int $position;
 
     #[Column(type: 'string')]
+    #[Groups(['public'])]
     protected string $parentId = '';
 
     #[Column(type: 'boolean')]
@@ -99,6 +107,7 @@ class FormField extends BaseModel
             'falseLabel' => 'NO'
         ]
     ])]
+    #[Groups(['public'])]
     protected $required;
 
     #[Column(type: 'string')]
@@ -107,9 +116,11 @@ class FormField extends BaseModel
         'type' => 'Text',
         'placeholder' => 'VALIDATION_TYPE'
     ])]
+    #[Groups(['public'])]
     protected string $validationType;
 
     #[Column(type: 'jsonField')]
     #[DefaultValue([])]
+    #[Groups(['public'])]
     protected string|array $fieldConfiguration;
 }

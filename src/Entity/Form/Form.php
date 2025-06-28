@@ -23,6 +23,7 @@ class Form extends BaseModel
         'type' => 'Text',
         'placeholder' => 'TITLE'
     ])]
+    #[Groups(['public'])]
     protected string $title;
 
     #[Column(type: 'string')]
@@ -30,6 +31,7 @@ class Form extends BaseModel
         'type' => 'Email',
         'placeholder' => 'SENDER_EMAIL'
     ])]
+    #[Groups(['public'])]
     protected string $senderEmail;
 
     #[Column(type: 'string')]
@@ -37,6 +39,7 @@ class Form extends BaseModel
         'type' => 'Text',
         'placeholder' => 'SENDER_NAME'
     ])]
+    #[Groups(['public'])]
     protected string $senderName;
 
     #[Column(type: 'string')]
@@ -44,6 +47,7 @@ class Form extends BaseModel
         'type' => 'Text',
         'placeholder' => 'SUBJECT_FOR_CONFIRMATION'
     ])]
+    #[Groups(['public'])]
     protected string $subject;
 
     #[Column(type: 'string')]
@@ -55,27 +59,28 @@ class Form extends BaseModel
             'getCall' => '/be/api/custom/email/template/list'
         ]
     ])]
+    #[Groups(['public'])]
     protected string $emailTemplate;
 
     #[OneToMany(targetEntity: FormField::class, mappedBy: 'form')]
-    #[Groups(['list', 'nested'])]
     #[BackendField(config: [
         'type' => 'FormFields',
         'placeholder' => 'FIELDS',
         'config' => [
         ]
     ])]
+    #[Groups(['public'])]
     protected $fields;
 
 
     #[OneToMany(targetEntity: Result::class, mappedBy: 'form')]
-    #[Groups(['list'])]
     #[BackendField(config: [
         'type' => 'FormResults',
         'placeholder' => 'RESULTS',
         'config' => [
         ]
     ])]
+    #[Groups(['public'])]
     protected $results;
 
     public function __construct()

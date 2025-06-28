@@ -1,13 +1,17 @@
 <template>
-  <input
-    type="tel"
-    :placeholder="$t(fieldPlaceholder)"
-    class="w-full input rounded-3xl shadow-xl border-gray"
-    :value="getValue()"
-    :pattern="getPattern()"
-    :class="fieldConfig.classes ?? ''"
-    @change="setContent($event)"
-  >
+  <label class="block">
+    <span class="block text-sm font-medium text-dark">{{ $t(fieldPlaceholder) }}</span>
+    <input
+      :id="fieldIdentifier"
+      type="tel"
+      class="border-slate-200 mt-3 w-full placeholder-gray-500 contrast-more:border-slate-400 contrast-more:placeholder-slate-500"
+      :name="fieldIdentifier"
+      :value="getValue()"
+      :class="fieldConfig.classes ?? ''"
+      :placeholder="$t(fieldPlaceholder)"
+      @change="setContent($event)"
+    >
+  </label>
 </template>
   
 <script>

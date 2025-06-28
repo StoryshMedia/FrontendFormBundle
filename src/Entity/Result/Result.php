@@ -18,10 +18,11 @@ class Result extends BaseModel
 {
     #[Column(type: 'jsonField')]
     #[DefaultValue([])]
+    #[Groups(['public'])]
     protected string|array $data;
 
     #[ManyToOne(targetEntity: Form::class, inversedBy: 'fields')]
     #[JoinColumn(name: 'form_id', referencedColumnName: 'id', onDelete: 'cascade', nullable: true)]
-    #[Groups(['minimal', 'backend'])]
+    #[Groups(['private'])]
     protected Form $form;
 }

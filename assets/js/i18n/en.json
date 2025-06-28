@@ -10,5 +10,7 @@
     "SUBJECT_FOR_CONFIRMATION": "Subject of the confirmation E-Mail",
     "SENDER_NAME": "Sender name of the confirmation E-Mail",
     "SENDER_EMAIL": "Sender address of the confirmation E-Mail",
+    "DOCUMENTATION": "Documentation",
+    "PARENT": "Parent",
     "DATE": "Date"
 }

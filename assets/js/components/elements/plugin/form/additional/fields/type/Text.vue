@@ -52,7 +52,6 @@ export default {
   },
   methods: {
     getValue() {
-      console.log(this.fieldIdentifier);
       return ValueService.getValue(this.fieldValue, this.fieldConfig);
     },
     setContent(content) {
