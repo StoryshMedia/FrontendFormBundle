@@ -17,7 +17,7 @@
     </div>
     <vue-collapsible :is-open="expanded === true">
       <div class="pt-1 pb-3 px-2 border-t border-gray">
-        <div class="grid grid-cols-3">
+        <div class="grid grid-cols-2">
           <div>
             <p
               class="mt-3 mb-1 pl-2 text-sm font-bold"
@@ -58,6 +58,20 @@
               :item-value="field.useAsLastName"
               :field-placeholder="'USE_AS_LAST_NAME'"
               @updateValue="setFieldValue($event, 'useAsLastName', fieldIndex)"
+            />
+          </div>
+          <div>
+            <p
+              class="mt-3 mb-1 pl-2 text-sm font-bold"
+            >
+              {{ $t('USE_AS_ADDRESS') }}
+            </p>
+            <field
+              :edit-allowed="true"
+              :field-string="'Checkbox'"
+              :item-value="field.useAsAddress"
+              :field-placeholder="'USE_AS_ADDRESS'"
+              @updateValue="setFieldValue($event, 'useAsAddress', fieldIndex)"
             />
           </div>
         </div>

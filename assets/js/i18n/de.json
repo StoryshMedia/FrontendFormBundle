@@ -10,5 +10,7 @@
     "SUBJECT_FOR_CONFIRMATION": "Betreff der Bestätigungsmail",
     "SENDER_NAME": "Absendername der Bestätigungsmail",
     "SENDER_EMAIL": "Absendeadresse der Bestätigungsmail",
+    "DOCUMENTATION": "Dokumentation",
+    "PARENT": "Übergeordneter Eintrag",
     "DATE": "Datum"
 }

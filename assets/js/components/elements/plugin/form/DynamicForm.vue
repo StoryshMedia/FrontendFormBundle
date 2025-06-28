@@ -205,7 +205,7 @@ export default {
             validationResult.formData['form'] = {id: this.form.id};
             ApiService.post(this.endpoint, validationResult.formData, false).then(result => {
               this.isLoading = false;
-              if (result.success && result.success === true) {
+              if (result.id) {
                 for (const [key, value] of Object.entries(this.formData)) {
                   this.formData[key] = '';
                 }
