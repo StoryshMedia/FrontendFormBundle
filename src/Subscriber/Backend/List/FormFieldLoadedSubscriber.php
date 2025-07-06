@@ -31,7 +31,7 @@ class FormFieldLoadedSubscriber implements EventSubscriberInterface
                     $data['fields'][$fieldKey]['fieldConfiguration']['values'] = DataHandler::sortItemsByField($field['fieldConfiguration']['values'], 'position');
                 }
 
-                foreach ($field['children'] as $childKey => $child) {
+                foreach ($field['children'] ?? [] as $childKey => $child) {
                     if (DataHandler::doesKeyExists('values', $child['fieldConfiguration'])) {
                         $data['fields'][$fieldKey]['children'][$childKey]['fieldConfiguration']['values'] = DataHandler::sortItemsByField($child['fieldConfiguration']['values'], 'position');
                     }

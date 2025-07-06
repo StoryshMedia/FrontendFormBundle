@@ -162,7 +162,9 @@ export default {
     const props = JSON.parse(this.dataset.props);
     this.fields = props.form.fields ?? [];
     for (let i = 0; i <= this.fields.length - 1; i++) {
-      if (this.fields[i].children.length > 0) {
+      const children = this.fields[i].children ?? [];
+
+      if (children.length > 0) {
         for (let j = 0; j <= this.fields[i].children.length - 1; j++) {
           this.formData[this.fields[i].children[j].identifier] = '';
         }
