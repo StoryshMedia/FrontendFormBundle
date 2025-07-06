@@ -284,6 +284,9 @@ export default {
       this.expanded = !this.expanded;
     },
     getRowGridClass() {
+      if (!this.field.children) {
+        return 'grid-cols-1';  
+      }
       return 'grid-cols-' + this.field.children.length;
     },
     emitDelete() {

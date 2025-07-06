@@ -173,14 +173,18 @@ export default {
           type: '',
           identifier: '',
           parentId: event.item.id,
-          position: event.item.children.length,
+          position: (event.item.children) ? event.item.children.length : 0,
           label: this.$t('NEW_FIELD'),
           form: {
             id: this.baseId
           }
         }
       ).then(result => {
-        this.fields[event.index].children.push((result.data) ? result.data : result);
+        if (this.fields[event.index].children) {
+          this.fields[event.index].children.push((result.data) ? result.data : result);
+        } else {
+          this.fields[event.index].children = [(result.data) ? result.data : result];
+        }
         this.$emit('updateValue', this.fields);
         this.isLoading = false;
       });

@@ -11,6 +11,7 @@ use Symfony\Component\Serializer\Attribute\Groups;
 use Doctrine\Common\Collections\ArrayCollection;
 use Smug\Core\Entity\Base\Attribute\BackendField;
 use Smug\Core\Entity\Base\Attribute\DefaultValue;
+use Smug\Core\Entity\Base\Attribute\Nested;
 use Smug\FrontendFormBundle\Entity\FormField\FormField;
 use Smug\FrontendFormBundle\Entity\Result\Result;
 
@@ -63,6 +64,7 @@ class Form extends BaseModel
     protected string $emailTemplate;
 
     #[OneToMany(targetEntity: FormField::class, mappedBy: 'form')]
+    #[Nested()]
     #[BackendField(config: [
         'type' => 'FormFields',
         'placeholder' => 'FIELDS',

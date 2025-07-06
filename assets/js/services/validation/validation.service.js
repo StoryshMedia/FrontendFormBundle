@@ -29,19 +29,20 @@ class ValidationService {
   }
   validateField(field, formData, errors) {
     let isValid = true;
-    if (field.children.length === 0) {
+    const children = field.children ?? []; 
+    if (children.length === 0) {
       errors[field.identifier] = {
         errors: []
       };
     } else {
-      for (let j = 0; j <= field.children.length - 1; j++) {
+      for (let j = 0; j <= children.length - 1; j++) {
         errors[field.children[j].identifier] = {
           errors: []
         };
       }
     }
 
-    if (typeof formData[field.identifier] === 'undefined' && field.children.length === 0) {
+    if (typeof formData[field.identifier] === 'undefined' && children.length === 0) {
       formData[field.identifier] = '';
     }
 
